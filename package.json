@@ -1,0 +1,61 @@
+{
+  "name": "transpose",
+  "displayName": "Transpose",
+  "description": "Swap characters arround the cursor or words by case or words arround a dot",
+  "version": "0.0.1",
+  "publisher": "Naymon",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lNaymonl/transpose-vscode-extension"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.transposeSelection",
+        "title": "Transpose Selection",
+        "category": "Transpose"
+      },
+      {
+        "command": "extension.transposeCharacter",
+        "title": "Transpose Character arround Cursor",
+        "category": "Transpose"
+      }
+    ],
+	  "keybindings": [
+      {
+        "command": "extension.transposeSelection",
+        "key": "ctrl+shift+t",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.transposeCharacter",
+        "key": "ctrl+t",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "lint": "eslint \"src/**/*.ts\"",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/vscode": "^1.73.0",
+    "@typescript-eslint/eslint-plugin": "^7.14.0",
+    "@typescript-eslint/parser": "^7.14.0",
+    "eslint": "^8.26.0",
+    "typescript": "^5.6.2"
+  }
+}
